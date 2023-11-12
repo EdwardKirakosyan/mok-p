@@ -1,7 +1,6 @@
-$light-color: #f4f4f4;
-$font-stack: Arial, Helvetica, sans-serif;
-$prymary-color: #0e6cff;
-$secondary-color: #ff8700;
+@import "config";
+@import "utils";
+@import "buttons";
 
 *,
 *::after,
@@ -26,8 +25,7 @@ a {
 }
 
 .showcase {
-  background-color: $prymary-color;
-  color: #f4f4f4;
+  @include set-background($prymary-color);
   height: 600px;
 
   nav {
@@ -43,13 +41,14 @@ a {
     li {
       padding: 15px;
     }
+
+    a {
+      color: set-text-color($prymary-color);
+    }
+
     a:hover {
       color: $secondary-color;
     }
-  }
-
-  a {
-    color: #f4f4f4;
   }
 
   &-content {
@@ -66,15 +65,5 @@ a {
       font-size: 50px;
       line-height: 1.2;
     }
-    p {
-      margin: 20px 0;
-    }
   }
-}
-
-.container {
-  max-width: 1100px;
-  padding: 0 30px;
-  margin: 0 auto;
-  overflow: auto;
 }
